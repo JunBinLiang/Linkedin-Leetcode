@@ -13,7 +13,7 @@
  *     }
  * }
  */
-//Time Use : 1min
+//Time Use : 1 min
 
 class Solution {
     public int maxDepth(TreeNode root) {
