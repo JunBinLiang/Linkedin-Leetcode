@@ -1,4 +1,4 @@
-//Time : 
+//Time : 3 min
 class Solution {
     public int maxKilledEnemies(char[][] a) {
         int res = 0;
