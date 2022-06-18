@@ -26,6 +26,8 @@
  *     public List<NestedInteger> getList();
  * }
  */
+//Time : 3 min
+
 class Solution {
     public int depthSum(List<NestedInteger> nestedList) {
         return dfs(nestedList, 1);
