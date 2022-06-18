@@ -13,6 +13,8 @@
  *     }
  * }
  */
+//Time Use : 1min
+
 class Solution {
     public int maxDepth(TreeNode root) {
         if(root == null) {
