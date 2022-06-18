@@ -28,7 +28,6 @@ class DistanceLimitedPathsExist {
                 nums[r1] = r2;
                 graph[u].add(new int[]{v, w});
                 graph[v].add(new int[]{u, w});
-                //System.out.println(u + " " + v + " " + w);
             }
         }
         
@@ -45,7 +44,6 @@ class DistanceLimitedPathsExist {
         for(int i = 0; i < n; i++) {
             if(!seen[i]) {
                 seen[i] = true;
-                //System.out.println(i);
                 dfs(i);
             }
         }
@@ -122,10 +120,10 @@ class DistanceLimitedPathsExist {
             }
         }
         if(x == y) return x;
-        for(int i = 15; i>=0; i--)//不重合，x 和 y 一起往上跳
+        for(int i = 15; i>=0; i--)
         {
-            if(f[x][i] != f[y][i]) //只要父亲不同，就跳，父亲相同，就停了
-            {                    // 最后一次，是没有跳上去的
+            if(f[x][i] != f[y][i]) 
+            {                    
 
                 x = f[x][i];
                 y = f[y][i];
