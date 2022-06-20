@@ -32,6 +32,7 @@ class Solution {
         cur = head;
         for(int i = 0; i < cnt - k - 1; i++) {
             cur = cur.next;
+            
         }
         nxt = cur.next;
         
