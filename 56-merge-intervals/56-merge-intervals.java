@@ -1,16 +1,15 @@
 class Solution {
-    public int[][] merge(int[][] a) {
+    public int[][] merge(int[][] a) { 
         Arrays.sort(a, (x, y) -> {
             return x[0] - y[0];
         });
-        
         Stack<int[]> sta = new Stack<>();
         for(int p[] : a) {
             if(sta.size() == 0) {
                 sta.push(p);
             } else {
                 int peek[] = sta.peek();
-                if(p[0] <= peek[1]) {
+                if(p[0] <= peek[1]) { //merge
                     peek[1] = Math.max(peek[1], p[1]);
                 } else {
                     sta.push(p);
