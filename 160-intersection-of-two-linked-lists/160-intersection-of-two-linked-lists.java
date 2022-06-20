@@ -44,7 +44,5 @@ public class Solution {
             cur2 = cur2.next;
         }
         return null;
-        
-        
     }
 }
