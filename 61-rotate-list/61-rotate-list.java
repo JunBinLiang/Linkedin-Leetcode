@@ -31,11 +31,9 @@ class Solution {
         ListNode nxt = null;
         cur = head;
         for(int i = 0; i < cnt - k - 1; i++) {
-            cur = cur.next;
-            
+            cur = cur.next; 
         }
         nxt = cur.next;
-        
         
         //re-structure
         cur.next = null;
