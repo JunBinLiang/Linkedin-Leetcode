@@ -32,18 +32,15 @@ class Solution {
         
         if(!first) {
             res.clear();
-            if(b[1] < a[0][0]) {
+            if(b[1] < a[0][0]) { //front
                 res.add(b);
             }
-            
-            
             for(int i = 0; i < n; i++) {
                 res.add(a[i]);
                 if(i + 1 < n && b[0] > a[i][1] && b[1] < a[i + 1][0]) {
                     res.add(b);
                 }
             }
-            
             if(b[0] > a[n - 1][1]) {
                 res.add(b);
             }
