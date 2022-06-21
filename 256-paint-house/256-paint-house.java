@@ -11,7 +11,6 @@ class Solution {
             }
         }
         
-        
         return Math.min(a[n - 1][0], Math.min(a[n - 1][1], a[n - 1][2]));
     }
 }
