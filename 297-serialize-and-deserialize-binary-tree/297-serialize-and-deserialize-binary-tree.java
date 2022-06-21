@@ -41,16 +41,12 @@ public class Codec {
         
         String a[] = data.split(" ");
         TreeNode root = new TreeNode(Integer.parseInt(a[0]));
-        
-        
-        
         Stack<Pair> sta = new Stack<>();
         sta.push(new Pair(root, 0));
         
         for(int i = 1; i < a.length; i++) {
             while(sta.peek().cnt == 2) sta.pop();
             Pair pair = sta.peek();
-            
             if(a[i].equals("#")) {
                 pair.cnt++;
                 if(pair.cnt == 2) {
@@ -70,7 +66,6 @@ public class Codec {
                 sta.push(new Pair(node, 0));
             }
         }
-        
         return root;
     }
     
