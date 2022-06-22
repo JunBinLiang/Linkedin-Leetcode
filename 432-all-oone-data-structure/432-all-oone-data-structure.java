@@ -3,6 +3,7 @@ class AllOne {
     Map<Integer, ListNode> g = new HashMap<>();
     ListNode head = new ListNode();
     ListNode tail = new ListNode();
+   
     public AllOne() {
         head.next = tail;
         tail.pre = head;
