@@ -1,13 +1,13 @@
 class Solution {
-    Map<String, List<Integer>> f = new HashMap<>();
+    List<Integer> dp[][];
     public List<Integer> diffWaysToCompute(String s) {
+        dp = new ArrayList[s.length()][s.length()];
         return dfs(s, 0, s.length() - 1);
     }
     
     public List<Integer> dfs(String s, int l, int r) {
         List<Integer> res = new ArrayList<>();
-        String state = l + "," + r;
-        if(f.containsKey(state)) return f.get(state);
+        if(dp[l][r] != null) return dp[l][r]; 
         
         for(int i = l; i <= r; i++) {
             char c = s.charAt(i);
@@ -26,7 +26,6 @@ class Solution {
         if(res.size() == 0) {
             res.add(Integer.parseInt(s.substring(l, r + 1)));
         }
-        f.put(state, res);
-        return res;
+        return dp[l][r] = res;
     }
 }
