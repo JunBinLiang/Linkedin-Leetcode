@@ -56,7 +56,3 @@ class Solution {
         dfs1(root.right, r + 1, right);
     }
 }
-
-//1 -  2 ^ (2 - 0 - 1)
-
-//3 - 2 ^ (3 - 0 - 1)
