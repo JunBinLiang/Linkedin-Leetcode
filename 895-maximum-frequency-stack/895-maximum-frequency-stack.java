@@ -7,7 +7,7 @@ class FreqStack {
             return y[1] - x[1];
         }
         return y[0] - x[0];
-    }); //stack : [size, topIdx]
+    }); //stack : [size, topIdx, stackVal]
     int idx = 0;
     public FreqStack() {
         
@@ -19,13 +19,14 @@ class FreqStack {
         }
         Stack<Integer> sta = f.get(val);
         sta.push(idx);
+        //record state
         pq.add(new int[]{sta.size(), idx, val}); 
         idx++;
         
     }
     
     public int pop() {
-        while(true) {
+        while(true) { //invalidate invalid state
             int top[] = pq.peek();
             int size = top[0], topIdx = top[1], val = top[2];
             Stack<Integer> sta = f.get(val);
@@ -40,10 +41,10 @@ class FreqStack {
         int val = pair[2];
         Stack<Integer> sta = f.get(val);
         sta.pop();
+        //record state
         if(sta.size() > 0) {
             pq.add(new int[]{sta.size(), sta.peek(), val});
         }
-        
         return val;
     }
 }
