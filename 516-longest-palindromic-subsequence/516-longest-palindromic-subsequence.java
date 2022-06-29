@@ -9,8 +9,7 @@ class Solution {
                     dp[i][j] = 1;
                 } else {
                     if(s.charAt(i) == s.charAt(j)) {
-                        if(i + 1 < n && j - 1 >= 0 && i + 1 <= j - 1)dp[i][j] = 2 + dp[i + 1][j - 1];
-                        else dp[i][j] = Math.max(dp[i][j], 2);
+                        dp[i][j] = 2 + dp[i + 1][j - 1];
                     } else {
                         dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
                     }
