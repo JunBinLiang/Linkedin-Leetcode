@@ -9,8 +9,7 @@ class Solution {
                 pro /= a[j++];
             }
             int size = i - j  + 1;
-            //res += Math.max(0, size);
-            if(size >= 0) res += size;
+            res += Math.max(0, size);
         }
         return res;
     }
