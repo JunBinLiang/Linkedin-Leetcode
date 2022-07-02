@@ -1,11 +1,10 @@
 class Solution {
     public int bulbSwitch(int n) {
         int res = 0;
-        for(int i = 1; i * i <= n; i++) {
+        /*for(int i = 1; i * i <= n; i++) {
             res++;
-        }
-        return res;
-        
+        }*/
+        return (int)(Math.sqrt(n));
     }
     
     public int cal(int n) {
@@ -20,10 +19,7 @@ class Solution {
     }
 }
 
-//20
-//1 2 4 5 10 20
-
-//1 2 3 4 5 6 ...
-//  2   4   6  8 ...
-//    3     6  9
-//               
+//1. touch odd number of times
+//2. when it will get touched : yinshu touched
+//3. [1 - n]  how many numbers yinshu odd numbers
+//4. perfect square yinshu odd numbers
