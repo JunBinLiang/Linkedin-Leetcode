@@ -5,7 +5,7 @@ struct Tree {
         memset(Next, -1, sizeof(Next));
         cnt = 0;
     }  
-} trees[1000000];
+} trees[100000];
 int id = 0;
 map<string, int> f;
 
