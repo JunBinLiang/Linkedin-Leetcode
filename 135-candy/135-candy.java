@@ -4,7 +4,6 @@ class Solution {
         List<Integer> graph[] = new ArrayList[n];
         int in[] = new int[n];
         int dis[] = new int[n];
-        
         for(int i = 0; i < n; i++) {
             graph[i] = new ArrayList<>();
         }
@@ -12,6 +11,7 @@ class Solution {
         for(int i = 0; i < n; i++) {
             if(i - 1 >= 0 && a[i - 1] > a[i]) {
                 graph[i].add(i - 1);
+                //graph[i - 1].add(i);
                 in[i - 1]++;
             }
             if(i + 1 < n && a[i + 1] > a[i]) {
@@ -19,7 +19,7 @@ class Solution {
                 in[i + 1]++;
             }
         }
-        
+       
         Queue<Integer> q = new LinkedList<>();
         for(int i = 0; i < n; i++) {
             if(in[i] == 0) {
@@ -38,7 +38,6 @@ class Solution {
                 }
             }
         }
-        
         int res = 0;
         for(int i : dis) res += i;
         return res;
