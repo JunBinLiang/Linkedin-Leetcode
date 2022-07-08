@@ -8,7 +8,7 @@ class Solution {
             graph[i] = new ArrayList<>();
         }*/
         Arrays.setAll(graph, e -> new ArrayList<>());
-        Arrays.setAll(sets, e -> new TreeSet<>());
+        Arrays.setAll(sets, x -> new TreeSet<>());
         
         for(int edge[] : edges) {
             //edge[0] -> edge[1]  u -> v
