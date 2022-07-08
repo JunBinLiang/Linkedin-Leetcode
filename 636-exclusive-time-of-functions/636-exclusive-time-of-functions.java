@@ -14,12 +14,7 @@ class Solution {
             } else {
                 int pair[] = sta.pop();
                 int add = t - pair[1] + 1;
-                
-                
-               // System.out.println("pre  :" + add);
                 add -= pair[2];
-               // System.out.println(Arrays.toString(pair) + " " + add);
-                
                 res[pair[0]] += add;
                 if(sta.size() > 0) {
                     sta.peek()[2] += (add + pair[2]);
@@ -30,5 +25,4 @@ class Solution {
     }
 }
 
-//
 
