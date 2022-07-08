@@ -32,9 +32,9 @@ class Solution {
                     return -1;
                 }
                 in[nxt]--;
+                dis[nxt] = Math.max(dis[nxt], 1 + dis[root]);
                 if(in[nxt] == 0) {
                     q.add(nxt);
-                    dis[nxt] = Math.max(dis[nxt], 1 + dis[root]);
                     set.add(nxt);
                 }
             }
