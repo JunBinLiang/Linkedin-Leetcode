@@ -1,7 +1,21 @@
 class Solution {
     public boolean judgeSquareSum(int c) {
+        long b = (long)(Math.sqrt(c) + 1);
+        for(long i = 0; i * i <= c; i++) {
+            long bb = c - i * i;
+            while(b >= 0 && b * b > bb) b--;
+            if(b * b == bb) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+/*
+class Solution {
+    public boolean judgeSquareSum(int c) {
         //2000000000
-       
+        //10000
         Set<Long> set = new HashSet<>();
         for(long i = 0; i * i <= c; i++) {
             set.add(i * i);
@@ -14,4 +28,6 @@ class Solution {
         }
         return false;
     }
-}
+}*/
+
+//Sqrt(c)
