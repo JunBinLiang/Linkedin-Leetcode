@@ -30,6 +30,3 @@ class Solution {
         return res;
     }
 }
-
-
-//  AAXXXAXX
