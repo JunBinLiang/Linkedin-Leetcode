@@ -20,7 +20,6 @@ class Solution {
             for(int j = 1; j < pos[i].size() - 1; j++) {
                 int l = pos[i].get(j) - pos[i].get(j - 1) - 1;
                 int r = pos[i].get(j + 1) - pos[i].get(j) - 1;
-                System.out.println(l + " " + r);
                 res += (l + r);
                 res += (l * r);
                 res++;
