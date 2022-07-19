@@ -1,12 +1,20 @@
 class Solution {
-    int dp[][];
     public int change(int amount, int[] coins) {
-        dp = new int[amount + 1][coins.length + 1];
-        for(int p[] : dp) Arrays.fill(p, -1);
-        return dfs(coins, amount, coins.length - 1);
+        int dp[][] = new int[amount + 1][coins.length + 1];
+        dp[0][0] = 1;
+        for(int i = 1; i <= coins.length; i++) {
+            int val = coins[i - 1];
+            for(int sum = 0; sum < dp.length; sum++) {
+                dp[sum][i] += dp[sum][i - 1];
+                if(sum - val >= 0) {
+                    dp[sum][i] += dp[sum - val][i];
+                }
+            }
+        }
+        return dp[amount][coins.length];
     }
     
-    public int dfs(int a[], int sum, int i) {
+    /*public int dfs(int a[], int sum, int i) {
         if(i < 0) {
             if(sum == 0) return 1;
             else return 0;
@@ -18,9 +26,9 @@ class Solution {
         res += dfs(a, sum, i - 1);
         if(sum >= a[i]) {
             res += dfs(a, sum - a[i], i);
-            //res += dfs(a, sum - a[i], i - 1);
         }
-        //System.out.println(sum + " " + i + " " + res);
         return dp[sum][i] = res;
-    }
+    }*/
+    
+    //dp[sum][i] = dp[sum - a[i]][i] + dp[sum][i - 1]
 }
