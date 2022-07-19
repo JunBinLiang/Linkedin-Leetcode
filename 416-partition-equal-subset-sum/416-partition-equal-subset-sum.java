@@ -1,28 +1,15 @@
 class Solution {
-
+    Boolean dp[][];
     public boolean canPartition(int[] a) {
         int sum = 0;
         for(int i : a) sum += i;
         if(sum % 2 == 1) return false;
         sum /= 2;
-        
-        boolean dp[][] = new boolean[sum + 1][a.length + 1];
-        dp[0][0] = true;
-        
-        for(int i = 1; i <= a.length; i++) {
-            int val = a[i - 1];
-            for(int j = 0; j < dp.length; j++) {
-                dp[j][i] |= dp[j][i - 1];
-                if(j >= val) {
-                    dp[j][i] |= dp[j - val][i - 1];
-                }
-            }
-        }
-  
-        return dp[sum][a.length];
+        dp = new Boolean[sum + 1][a.length + 1];
+        return dfs(a, sum, a.length - 1);
     }
     
-    /**public boolean dfs(int a[], int sum, int i) {
+    public boolean dfs(int a[], int sum, int i) {
         if(i < 0) {
             if(sum == 0) return true;
             else return false;
@@ -39,8 +26,6 @@ class Solution {
         if(y) res = true;
         dp[sum][i] = res;
         return res;
-    }**/
-    
-    //dp[sum][i] = dp[sum - a[i]][i - 1] | dp[sum][i - 1] 
+    }
     
 }
