@@ -12,11 +12,12 @@ class Solution {
         }
          
         //add
-        list.add(a[i]);
-        dfs(list, a, i + 1);
-        list.remove(list.size() - 1);
+        List<Integer> newlist = new ArrayList<>(list);
+        newlist.add(a[i]);
+        dfs(newlist, a, i + 1);
         
         //not add
-        dfs(list, a, i + 1);
+        List<Integer> newlist1 = new ArrayList<>(list);
+        dfs(newlist1, a, i + 1);
     }
 }
