@@ -19,7 +19,7 @@ class Solution {
                         res.add(str.toString());
                     } else if(str.length() == res.get(0).length()) {
                         res.add(str.toString());
-                    } 
+                    }
                 }
             }
             return;
